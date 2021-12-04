@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <!-- 创建HTML容器 -->
+    <div id="root"></div>
+    <script>
+        // 创建元素 元素名称  元素属性  元素的子节点
+        const title = React.createElement('h1', null, 'hello react')
+        // 挂载元素  要挂载的元素  挂载到哪个节点
+        ReactDOM.render(title,document.getElementById('root'))
+    </script>
+</body>
+</html>
