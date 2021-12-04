@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 定义一个类
+        class Person{
+            constructor(name,age){
+                this.name = name
+                this.age = age
+            }
+            speak(){
+                console.log(this.name,'@@@@',this.age);
+            }
+        }
+        // 创建类的实例对象
+        const p1 = new Person('zhangsan',18)
+        p1.speak()
+
+        // 创建一个student类 继承person类 
+        // 如果A继承了B   且B中使用了constructor构造器   那么子类继承B中的参数必须要加上super关键字
+        class Student extends Person{
+            constructor(name,age,adress){
+                super(name,age)
+                this.adress = adress
+            }
+            speak(){
+                console.log(this.name,this.age,this.adress);
+            }
+        }
+        const st = new Student('lisi0',19,'hechuan')
+        st.speak()
+    </script>
+</body>
+</html>
