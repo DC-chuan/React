@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../../node_modules/react/umd/react.development.js"></script>
+    <script src="../../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <!-- 
+        使用setState API 才能更改state中的数据
+        render 执行 1+n 次  第一次初始化 调用   数据更新 再次调用
+        自定义方法要是用 赋值语句的形式 + 箭头函数
+     -->
+    <div id="root"></div>
+    <script type="text/babel">
+        class Mycomponent extends React.Component{
+           state = {isHot: true,wind:'微风'}
+                
+            render(){
+                const {isHot,wind} = this.state
+                return <h1 onClick={this.changeWeather}>{`今天天气${isHot ? '炎热' : '凉爽'}`},{`并且伴着${wind}`}</h1>
+            }
+            changeWeather =()=>{
+                const isHot = this.state.isHot
+                this.setState({isHot:!isHot})
+            }
+        }
+        ReactDOM.render(<Mycomponent/>,document.querySelector('#root'))
+        
+    </script>
+</body>
+</html>
