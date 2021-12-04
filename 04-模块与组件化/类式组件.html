@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        // 创建类式组件 
+        class Mycomponent extends React.Component{
+            render(){
+                console.log(this);
+                return <h2>我是类式组件</h2>
+            }
+        }
+        ReactDOM.render(<Mycomponent/>,document.querySelector('#root'))
+        // react 帮我们 new 了 实例对象  类中方法的this指向的是组件的实例对象
+    </script>
+</body>
+</html>
